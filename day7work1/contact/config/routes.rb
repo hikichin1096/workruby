@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
  #contactのリクエストが来たときにcontactのindexを起動する
   get '/contact', to:'contacts#index'
+  
 
 
 end

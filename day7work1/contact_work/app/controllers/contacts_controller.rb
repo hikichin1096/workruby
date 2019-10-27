@@ -1,22 +1,22 @@
 class ContactsController < ApplicationController
 
-  def
-
   def new
     @contact = Contact.new
   end
 
   def create
-    @contact = Contact.create(Contact_params)
-      #redirect_to new_contact_path
-      redirect_to "/contacts/new"
-
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      redirect_to new_contact_path, notice: "お問い合わせ完了"
+    else
+      render :new
+    end
   end
 
   private
 
-  def Contact_params
-    param.require(:contact).permit(:name, :email, :content)
+  def contact_params
+    params.require(:contact).permit(:name, :email, :content)
   end
 
 end

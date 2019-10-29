@@ -10,6 +10,11 @@
   <tr>
     <td><%= twiclone.id %></td>
     <td><%= twiclone.content %></td>
+    <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
   </tr>
 <% end %>
 </table>
+
+<br>
+
+<%= link_to '新しくツイート', new_twiclone_path %>

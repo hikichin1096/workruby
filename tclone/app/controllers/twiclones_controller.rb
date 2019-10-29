@@ -13,6 +13,10 @@ class TwiclonesController < ApplicationController
     redirect_to new_twiclone_path #リダイレクトを行う
   end
 
+  def show
+    @twiclone = Twiclone.find(params[:id])
+  end
+
   private
 
   def twiclone_params

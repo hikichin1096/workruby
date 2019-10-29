@@ -1,2 +1,15 @@
-<h1>Twiclones#index</h1>
-<p>Find me in app/views/twiclones/index.html.erb</p>
+<h1>つぶやき一覧</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>内容</th>
+  </tr>
+
+<% @twiclones.each do |twiclone| %>
+  <tr>
+    <td><%= twiclone.id %></td>
+    <td><%= twiclone.content %></td>
+  </tr>
+<% end %>
+</table>

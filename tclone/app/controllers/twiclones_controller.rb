@@ -1,10 +1,11 @@
 class TwiclonesController < ApplicationController
 
   def index
+    @twiclones = Twiclone.all
   end
 
   def new
-    @twiclone = Twiclone.new
+    @twiclones = Twiclone.new
   end
 
   def create

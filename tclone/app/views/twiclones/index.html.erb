@@ -11,6 +11,7 @@
     <td><%= twiclone.id %></td>
     <td><%= twiclone.content %></td>
     <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
+    <td><%= link_to "ツイートを編集する", edit_twiclone_path(twiclone.id) %></td>
   </tr>
 <% end %>
 </table>

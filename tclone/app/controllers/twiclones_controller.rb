@@ -9,12 +9,28 @@ class TwiclonesController < ApplicationController
   end
 
   def create
-    Twiclone.create(twiclone_params)
-    redirect_to new_twiclone_path #リダイレクトを行う
+    @twiclone = Twiclone.create(twiclone_params)
+
+    if @twiclone.save
+      #リダイレクト
+      redirect_to new_twiclone_path, notice: "ツイート完了！"
+    else
+      #入力フォーム再描画
+      render :new
+    end
+  end
+
+  def edit
+    @twiclone = Twiclone.find(params[:id])
   end
 
   def show
     @twiclone = Twiclone.find(params[:id])
+  end
+
+  def update
+    @twiclone = Twiclone.find(params[:id])
+    redirect_to twiclone_path, notice:"ツイート編集完了"
   end
 
   private

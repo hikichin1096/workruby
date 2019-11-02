@@ -1,4 +1,4 @@
-<%= form_with(model: @twiclone, local: true) do |form| %>
+<%= form_with(model: @twiclone, local: true, url: choose_new_or_edit) do |form| %>
   <% if @twiclone.errors.any? %>
     <div id="error_explanation">
       <h2><%= @twiclone.errors.count %>件のエラーがあります。</h2>

@@ -13,12 +13,16 @@ class TwiclonesController < ApplicationController
   def create
     @twiclone = Twiclone.create(twiclone_params)
 
-    if @twiclone.save
-      #リダイレクト
-      redirect_to new_twiclone_path, notice: "ツイート完了！"
-    else
-      #入力フォーム再描画
+    if params[:back]
       render :new
+    else
+      if @twiclone.save
+        #リダイレクト
+        redirect_to new_twiclone_path, notice: "ツイート完了！"
+      else
+        #入力フォーム再描画
+        render :new
+      end
     end
   end
 
@@ -40,6 +44,12 @@ class TwiclonesController < ApplicationController
       render:edit
     end
   end
+
+  def comfirm
+    @twiclone = Twiclone.new(twiclone_params)
+    render :new if @twiclone.invalid?
+  end
+
 
   private
 

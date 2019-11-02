@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :twiclones do
-    post :confirm
+    collection do
+      post :confirm
+    end
   end
 end

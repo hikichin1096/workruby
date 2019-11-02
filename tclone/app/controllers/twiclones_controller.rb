@@ -1,11 +1,13 @@
 class TwiclonesController < ApplicationController
 
+  before_action :set_twiclone,only:[:show, :edit, :update, :destroy]
+
   def index
     @twiclones = Twiclone.all
   end
 
   def new
-    @twiclones = Twiclone.new
+    @twiclone = Twiclone.new
   end
 
   def create
@@ -21,22 +23,32 @@ class TwiclonesController < ApplicationController
   end
 
   def edit
-    @twiclone = Twiclone.find(params[:id])
   end
 
   def show
-    @twiclone = Twiclone.find(params[:id])
+  end
+
+  def destroy
+    @twiclone.destroy
+    redirect_to twiclones_path, notice:"ツイート削除完了"
   end
 
   def update
-    @twiclone = Twiclone.find(params[:id])
-    redirect_to twiclone_path, notice:"ツイート編集完了"
+    if @twiclone.update(twiclone_params)
+      redirect_to twiclone_path, notice:"ツイート編集完了"
+    else
+      render:edit
+    end
   end
 
   private
 
   def twiclone_params
     params.require(:twiclone).permit(:content)
+  end
+
+  def set_twiclone
+    @twiclone = Twiclone.find(params[:id])
   end
 
 end

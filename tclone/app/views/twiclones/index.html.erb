@@ -1,22 +1,31 @@
-<h1>つぶやき一覧</h1>
+<header class="header">
+  <div>日常のつぶやき</div>
+</header>
+<body>
 
-<table>
-  <tr>
-    <th>id</th>
-    <th>内容</th>
-  </tr>
+  <h1>つぶやき一覧</h1>
 
-<% @twiclones.each do |twiclone| %>
-  <tr>
-    <td><%= twiclone.id %></td>
-    <td><%= twiclone.content %></td>
-    <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
-    <td><%= link_to "ツイートを編集する", edit_twiclone_path(twiclone.id) %></td>
-    <td><%= link_to "ツイートを削除する", twiclone_path(twiclone.id), method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <%= link_to '新しくツイート', new_twiclone_path %>
 
-<br>
+  <table>
+    <tr>
+      <th>内容</th>
+    </tr>
 
-<%= link_to '新しくツイート', new_twiclone_path %>
+  <% @twiclones.each do |twiclone| %>
+    <tr>
+      <td><%= twiclone.content %></td>
+    </tr>
+     <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
+     <td><%= link_to "ツイートを編集する", edit_twiclone_path(twiclone.id) %></td>
+     <td><%= link_to "ツイートを削除する", twiclone_path(twiclone.id), method: :delete %></td>
+    <tr>
+
+    </tr>
+  <% end %>
+  </table>
+</body>
+<footer class="footer">
+  <!-- 追記 -->
+  <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
+</footer>

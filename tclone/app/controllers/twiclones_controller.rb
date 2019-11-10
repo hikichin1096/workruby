@@ -45,7 +45,7 @@ class TwiclonesController < ApplicationController
     end
   end
 
-  def comfirm
+  def confirm
     @twiclone = Twiclone.new(twiclone_params)
     render :new if @twiclone.invalid?
   end

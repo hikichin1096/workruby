@@ -10,14 +10,11 @@
     </tr>
 
   <% @twiclones.each do |twiclone| %>
-    <tr>
-      <td class ="content"><%= twiclone.content %></td>
-    </tr>
-     <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
-     <td><%= link_to "ツイートを編集する", edit_twiclone_path(twiclone.id) %></td>
-     <td><%= link_to "ツイートを削除する", twiclone_path(twiclone.id), method: :delete %></td>
-    <tr>
-
+    <tr class = "trcontent">
+      <td class ="tdcontent"><%= twiclone.content %></td>
+      <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
+      <td><%= link_to "ツイートを編集する", edit_twiclone_path(twiclone.id) %></td>
+      <td><%= link_to "ツイートを削除する", twiclone_path(twiclone.id), method: :delete %></td>
     </tr>
   <% end %>
   </table>

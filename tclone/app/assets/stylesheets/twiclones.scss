@@ -1,20 +1,27 @@
 html {
   height: 100%;
-  font-size: 62.5%;
+  font-size: 80%;
 }
 
 body {
   height: 100%;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+
+.content{
+  font-size: 150%;
 }
 
 .header {
-  background-color: #F5B4B3;
+  background-color: #00FFFF;
   height: 50px;
   font-size: 1.5rem;
 }
 
 .footer{
-  background-color: #4D4D4D;
+  background-color: #00FFFF;
   height: 100px;
   width: 100%;
 }
@@ -24,8 +31,6 @@ body {
   margin: 0 auto;
   position: relative;
   min-height: 100%;
-  /* heightとmin-heightで挙動の違いを確認してみましょう。 */
-  /* height: 100%; */
 }
 
 .footer{

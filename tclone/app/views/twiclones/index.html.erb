@@ -1,6 +1,3 @@
-<header class="header">
-  <div>日常のつぶやき</div>
-</header>
 <body>
 
   <h1>つぶやき一覧</h1>
@@ -14,7 +11,7 @@
 
   <% @twiclones.each do |twiclone| %>
     <tr>
-      <td><%= twiclone.content %></td>
+      <td class ="content"><%= twiclone.content %></td>
     </tr>
      <td><%= link_to 'ツイートを確認', twiclone_path(twiclone.id) %></td>
      <td><%= link_to "ツイートを編集する", edit_twiclone_path(twiclone.id) %></td>
@@ -25,7 +22,3 @@
   <% end %>
   </table>
 </body>
-<footer class="footer">
-  <!-- 追記 -->
-  <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
-</footer>
